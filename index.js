@@ -6,6 +6,9 @@
 const latte = {name: "Cafe Latte", price: 4, category: "Drinks"};
 const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
 
+
+
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1a: Make a function that builds objects🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Add to the function createMenuItems below so it will create objects following the same format found above for latte and breakfastBurrito (name, price, category).  
 The function should:
@@ -13,9 +16,25 @@ The function should:
   2. Create and return an object using the received values  
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem(passedName, passedPrice, passedCategory){ 
+let newItem = {
+name: passedName,
+price: passedPrice,
+catagory: passedCategory,
+};
+return newItem;
 }
+
+
+createMenuItem( 'pizza', 5, 'lunch');
+createMenuItem( 'hotdog', 4, 'lunch');
+createMenuItem( 'Coke', 2, 'drink');
+console.log (createMenuItem('pizza', 5, 'lunch'));
+console.log (createMenuItem('hotdog',4, 'lunch'));
+console.log (createMenuItem('coke',2, 'drink'));
+
+
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Test your createMenuItems function by doing the following:
@@ -24,7 +43,9 @@ Test your createMenuItems function by doing the following:
   3. Log each returned object to the console  
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
-*/
+*/ 
+
+
 
 
 
@@ -41,12 +62,30 @@ Using the burger object below do the following:
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
 
-export const burger = {
+
+/*teachers: 25%
+student: 25%
+public: 25% */
+
+
+const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  /*Your code here*/
+  discount (schoolDis)
+  {
+    if (schoolDis === "teacher" || schoolDis === "student")
+    {
+      return this.price *.75;
+    }
+    else this.price *9;
+  }
+
 }
+
+burger.discount("teacher");
+console.log(burger.discount("teacher")); 
+
 
 
 
@@ -61,6 +100,13 @@ const reviews = [
     {name: "Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."},
     {name: "Reyna", rating: 3.5, feedback: ""},
 ]
+
+if (reviews.name === "Julius") 
+{
+console.log 
+
+}
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Using the reviews array above:
@@ -98,9 +144,8 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
+/*function getReviewByIndex(/*Your code here*/
   /*Your code here*/
-}
 
 
   
@@ -116,9 +161,9 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
+/*function getLastReview(/*Your code here*/
   /*Your code here*/
-} 
+
 
 
 
@@ -138,10 +183,11 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
+/* 
+function getReviewByRating(/* code here */
     /* code here */
-  }
-
+  
+/*
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
@@ -156,9 +202,9 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-    /* code here */
-  }
+/*function getLongReviews(/* code here */
+    
+  
   
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
@@ -186,14 +232,15 @@ function carMaker(/* code here */) {
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
+
+/*
 function foo(){
   console.log('its working');
   return 'bar';
-}
+}*/
 
-export default{
+/* export default{
   foo,
   createMenuItem,
   getReviewByIndex,
-  getLastReview,
-}
+  getLastReview,*/
